@@ -64,10 +64,10 @@ resource "aws_rds_cluster_instance" "cluster_instances" {
 }
 
 
-#resource "aws_ssm_parameter" "rds_endpoint" {
-#  name  = "${var.env}.rds.ENDPOINT"
-#  type  = "String"
-#  value = aws_rds_cluster.rds.endpoint
-#  overwrite = true
-#
-#}
+resource "aws_ssm_parameter" "rds_endpoint" {
+  name  = "${var.env}.rds.ENDPOINT"
+  type  = "String"
+  value = aws_rds_cluster.rds.endpoint
+  overwrite = true
+
+}
